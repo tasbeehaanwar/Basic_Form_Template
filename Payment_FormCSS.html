@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="/style.css"> -->
+    <title>Styling Payment form</title>
+    <style>
+      *{
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 15px 35px;
+    font-size: 16px;
+    padding: 8px;
+    
+}
+.container{
+    background-color: rgba(85, 84, 85, 0.266);
+    padding: 5px 20px 15px 20px;
+    border: 2px solid rgb(21, 30, 2);
+    border-radius: 7px;
+}
+
+/* Here we are selecting all input tags for styling */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="date"],
+select,
+textarea{
+    width: 100%;
+    padding: 12px ;
+    border: 2px solid rgba(62, 60, 60, 0.495);
+    border-radius: 7px;
+    margin: 5px
+}
+
+/* Here we change the styling of fieldset tag */
+fieldset{
+    width: 100%;
+    padding: 12px ;
+    border: 2px solid rgba(62, 60, 60, 0.495);
+    border-radius: 7px;
+
+}
+.main_heading{
+    text-align: center;
+}
+ /* styling for button */
+input[type="submit"]{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border: none;
+    background-color: rgba(8, 42, 25, 0.279);
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+
+}
+input[type="submit"]:hover{
+    background-color: rgb(15, 167, 116);
+}
+    </style>
+</head>
+<body>
+     <!-- Fist Step for create a Form we use Form Tag -->
+     <form action="noaction">
+       <div class="container">
+        <h2 class="main_heading">Payment Form</h2>
+        <p>Required Fields are Followed by *</p>
+        <h3>Contact Information</h3>
+        <p>First Name: * <input type="text" name="fname" value="" required /></p>
+        <p>Last Name: * <input type="text" name="lname" value="" required /></p>
+        <!-- WE use <Fieldset></Fieldset> Tag To Group Gender -->
+        <fieldset>
+          <!-- We use <Legend> </Legend> tag to Give Name to our input tag -->
+          <legend>Gender *</legend>
+          <p>
+            Male: <input type="radio" name="gender" id="Male" required /> Female:
+            <input type="radio" name="gender" id="Female" required />
+          </p>
+        </fieldset>
+  
+        <p>
+          Address: * <br />
+          <textarea
+            name="address"
+            id="address"
+            cols="30"
+            rows="10"
+            required
+          ></textarea>
+        </p>
+        <p>Email: * <input type="email" name="email" id="email" required /></p>
+        <p>
+          Pincode: * <input type="number" name="Pincode" id="Pincode" required />
+        </p>
+        <hr />
+        <h2>Payment Information</h2>
+        <p>
+          Card Type: *
+          <select name="card_type" id="card_type" required>
+            <option value="">--Select a Card Type--</option>
+            <option value="Visa">Visa</option>
+            <option value="mastercard">Master Card</option>
+            <option value="paypal">paypal</option>
+          </select>
+        </p>
+        <p>
+          Card number: <input type="number" name="card_number" id="card_number" />
+        </p>
+        <p>
+          Expiration Date: <input type="date" name="exp_date" id="exp_date" />
+        </p>
+        <p>CVV: <input type="password" name="cvv" id="cvv" /></p>
+        <input type="submit" value="Pay Now" />
+      </div>
+      </form>
+</body>
+</html>
